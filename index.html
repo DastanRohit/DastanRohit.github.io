@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rohit Kushwaha — Server Admin / DevOps Engineer</title>
+  <meta name="description" content="Portfolio of Rohit Kushwaha — Server Admin & DevOps Engineer. Projects, skills, resume, and contact." />
+
+  <!-- Open Graph (better for LinkedIn / Twitter shares) -->
+  <meta property="og:title" content="Rohit Kushwaha — Portfolio" />
+  <meta property="og:description" content="Portfolio: projects, skills, resume, contact." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7c5cff; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --max-width:1100px;
+      color-scheme: light dark;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071022 0%, #071827 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--max-width);margin:36px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#5b7bff,#7c5cff);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{display:flex;gap:14px;font-weight:600}
+    nav a{padding:8px 12px;border-radius:10px}
+    nav a:hover{background:var(--glass)}
+
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:24px;border-radius:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .title{font-size:28px;margin:0 0 6px}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);padding:10px 14px;border-radius:12px;color:white;font-weight:700;border:none;cursor:pointer}
+    .outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    .sidebar .card{background:var(--card);padding:18px;border-radius:14px}
+    .avatar{width:84px;height:84px;border-radius:12px;display:block;background:linear-gradient(135deg,#6ea0ff,#9b7cff);margin-bottom:10px}
+    .socials{display:flex;gap:8px;margin-top:12px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.02)}
+
+    section{margin-top:22px}
+    h2{margin:0 0 12px}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:12px}
+    .tech{color:var(--muted);font-size:13px;margin-top:8px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted)}
+
+    footer{margin-top:36px;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .projects-grid{grid-template-columns:1fr}
+    }
+
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" id="logo">RK</div>
+        <div>
+          <div style="font-weight:800;font-size:16px" id="me">Rohit Kushwaha</div>
+          <div class="muted" id="role">Server Admin</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a id="resumeLink" href="resume.pdf" download target="_blank" class="pill">Resume</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-card">
+        <h1 class="title" id="heroTitle">Hi — I'm <span id="nameInline">Rohit Kushwaha</span>.</h1>
+        <p class="lead" id="heroSubtitle">I manage Linux systems and love exploring DevOps tools to build reliable, automated, and scalable IT infrastructure.</p>
+
+        <div class="cta">
+          <button class="btn" id="contactBtn">Contact me</button>
+          <a class="outline" href="#projects" style="padding:10px 14px;border-radius:12px;display:inline-block">See projects</a>
+        </div>
+
+        <section id="about">
+          <h2>About</h2>
+          <p id="aboutText">I'm a software engineer with experience building user-facing applications. I enjoy clean design, fast performance, and shipping production-ready code.</p>
+        </section>
+
+        <section id="projects">
+          <h2>Selected projects</h2>
+          <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div class="avatar" aria-hidden="true"></div>
+          <div style="font-weight:700" id="sideName">Rohit Kushwaha</div>
+          <div class="muted" id="sideRole">Server Admin</div>
+          <div style="margin-top:12px" id="location">Delhi, India</div>
+          <div class="socials" style="margin-top:12px">
+            <a id="githubLink" href="https://github.com/DastanRohit" title="GitHub" aria-label="GitHub">GH</a>
+            <a id="linkedinLink" href="https://www.linkedin.com/in/rohit-kush29" title="LinkedIn" aria-label="LinkedIn">IN</a>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Skills</h3>
+          <div class="skills" id="skillsList">
+            <span class="skill">Linux</span>
+            <span class="skill">Bash</span>
+            <span class="skill">DevOps</span>
+            <span class="skill">AWS</span>
+            <span class="skill">Prometheus</span>
+            <span class="skill">Grafana</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="contact" style="margin-top:18px">
+      <h2>Contact</h2>
+      <p>If you'd like to reach out, click <a href="#" id="mailLink">here to email me</a> or use the button below to copy my email address.</p>
+      <button class="btn" id="copyEmail">Copy email</button>
+    </section>
+
+    <footer>
+      Created with ♥ — <span id="footerName">Rohit Kushwaha</span>
+    </footer>
+  </div>
+
+  <script>
+    const PROFILE = {
+      name: "Rohit Kushwaha",
+      role: "Server Admin",
+      location: "Delhi, India",
+      email: "rohitkushwaha99@gmail.com",
+      github: "https://github.com/DastanRohit",
+      linkedin: "https://www.linkedin.com/in/rohit-kush29",
+      resume: "resume.pdf",
+      about: "I manage Linux systems and love exploring DevOps tools to build reliable, automated, and scalable IT infrastructure.",
+      projects: [
+        {
+          title: "Log Monitoring & Alert System",
+          description: "Automated SSH login alerts with Bash and cron on Ubuntu 24.04; integrated with Postfix/mailutils for email notifications and validated through simulated SSH attacks.",
+          tech: "Linux • Logs • BashScripting",
+          repo: "https://github.com/DastanRohit/log-monitoring-alert-system"
+        },
+        {
+          title: "Monitoring Stack with AWS",
+          description: "Built a system monitoring stack (Prometheus + Grafana) on AWS to track CPU, memory, and disk usage with automated setup and dashboards.",
+          tech: "AWS • Prometheus • Grafana",
+          repo: "https://github.com/DastanRohit/monitoring-config"
+        }
+      ]
+    };
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.getElementById('me').textContent = PROFILE.name;
+      document.getElementById('sideName').textContent = PROFILE.name;
+      document.getElementById('nameInline').textContent = PROFILE.name;
+      document.getElementById('role').textContent = PROFILE.role;
+      document.getElementById('sideRole').textContent = PROFILE.role;
+      document.getElementById('location').textContent = PROFILE.location;
+      document.getElementById('aboutText').textContent = PROFILE.about;
+      document.getElementById('resumeLink').href = PROFILE.resume;
+      document.getElementById('footerName').textContent = PROFILE.name;
+      document.getElementById('logo').textContent = PROFILE.name.split(' ').map(n=>n[0]).slice(0,2).join('');
+
+      document.getElementById('githubLink').href = PROFILE.github;
+      document.getElementById('linkedinLink').href = PROFILE.linkedin;
+      document.getElementById('mailLink').href = `mailto:${PROFILE.email}?subject=Opportunity%20from%20your%20portfolio`;
+
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = '';
+      PROFILE.projects.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'project';
+        el.innerHTML = `<strong>${p.title}</strong><div class=muted style="margin-top:6px">${p.description}<div class=tech>${p.tech}</div></div>`;
+        if(p.repo || p.link){
+          const foot = document.createElement('div');
+          foot.style.marginTop = '8px';
+          if(p.link) foot.innerHTML += `<a href="${p.link}" target="_blank" rel="noopener">Live</a> `;
+          if(p.repo) foot.innerHTML += ` <a href="${p.repo}" target="_blank" rel="noopener">Code</a>`;
+          el.appendChild(foot);
+        }
+        grid.appendChild(el);
+      });
+
+      document.getElementById('copyEmail').addEventListener('click', async ()=>{
+        try{
+          await navigator.clipboard.writeText(PROFILE.email);
+          alert('Email copied to clipboard: ' + PROFILE.email);
+        }catch(e){
+          prompt('Copy this email:', PROFILE.email);
+        }
+      });
+
+      document.getElementById('contactBtn').addEventListener('click', ()=>{
+        window.location.href = `mailto:${PROFILE.email}?subject=Hello%20from%20your%20portfolio`;
+      });
+    });
+  </script>
+</body>
+</html>
