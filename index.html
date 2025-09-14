@@ -42,7 +42,13 @@
     .outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
 
     .sidebar .card{background:var(--card);padding:18px;border-radius:14px}
-    .avatar{width:84px;height:84px;border-radius:12px;display:block;background:linear-gradient(135deg,#6ea0ff,#9b7cff);margin-bottom:10px}
+    .avatar{
+  width:84px;
+  height:84px;
+  border-radius:12px;
+  object-fit:cover;
+  margin-bottom:10px;
+}
     .socials{display:flex;gap:8px;margin-top:12px}
     .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.02)}
 
@@ -110,7 +116,7 @@
 
       <aside class="sidebar">
         <div class="card">
-          <div class="avatar" aria-hidden="true"></div>
+          <img src="profile.png" alt="Rohit Kushwaha" class="avatar" />
           <div style="font-weight:700" id="sideName">Rohit Kushwaha</div>
           <div class="muted" id="sideRole">Server Admin</div>
           <div style="margin-top:12px" id="location">Delhi, India</div>
