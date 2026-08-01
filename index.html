@@ -3,226 +3,670 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rohit Kushwaha — Server Admin / DevOps Engineer</title>
-  <meta name="description" content="Portfolio of Rohit Kushwaha — Server Admin & DevOps Engineer. Projects, skills, resume, and contact." />
+  <title>Rohit Kushwaha — Technical Support DR &amp; Cloud</title>
+  <meta name="description" content="Rohit Kushwaha — Technical Support (DR & Cloud) based in Delhi, India. Experienced managing Windows and Linux servers in cloud and physical data center environments, with expertise in disaster recovery, infrastructure, and system administration." />
+  <meta name="author" content="Rohit Kushwaha" />
+  <meta name="theme-color" content="#0a0e1a" />
 
-  <!-- Open Graph (better for LinkedIn / Twitter shares) -->
-  <meta property="og:title" content="Rohit Kushwaha — Portfolio" />
-  <meta property="og:description" content="Portfolio: projects, skills, resume, contact." />
+  <!-- Open Graph / LinkedIn / Twitter -->
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rohit Kushwaha — Technical Support DR &amp; Cloud" />
+  <meta property="og:description" content="Windows &amp; Linux server administration across cloud and physical data center environments. Disaster recovery, infrastructure, and technical support." />
+  <meta property="og:url" content="https://dastanrohit.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Rohit Kushwaha — Technical Support DR &amp; Cloud" />
+  <meta name="twitter:description" content="Windows &amp; Linux server administration across cloud and physical data center environments. Disaster recovery, infrastructure, and technical support." />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- JSON-LD for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rohit Kushwaha",
+    "jobTitle": "Technical Support DR & Cloud",
+    "url": "https://dastanrohit.github.io/",
+    "image": "https://dastanrohit.github.io/profile.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Delhi", "addressCountry": "IN" },
+    "email": "mailto:rohitkushwaha99@gmail.com",
+    "sameAs": [
+      "https://github.com/DastanRohit",
+      "https://www.linkedin.com/in/rohit-kush29"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7c5cff; --glass: rgba(255,255,255,0.04);
-      --radius:14px; --max-width:1100px;
-      color-scheme: light dark;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --bg:#0a0e1a;
+      --bg-soft:#0e1424;
+      --card:rgba(255,255,255,0.035);
+      --card-hover:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.09);
+      --text:#e8ecf4;
+      --muted:#98a2b8;
+      --accent:#6366f1;
+      --accent-2:#22d3ee;
+      --accent-3:#a78bfa;
+      --green:#34d399;
+      --radius:16px;
+      --max-width:1120px;
+      --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      --font-display:'Space Grotesk','Inter',system-ui,sans-serif;
+      color-scheme:dark;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071022 0%, #071827 100%);color:#e6eef6}
-    a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:var(--max-width);margin:36px auto;padding:24px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font-body);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    ::selection{background:rgba(99,102,241,0.4)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+    section{padding:84px 0;scroll-margin-top:80px}
 
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .brand{display:flex;gap:16px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#5b7bff,#7c5cff);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav{display:flex;gap:14px;font-weight:600}
-    nav a{padding:8px 12px;border-radius:10px}
-    nav a:hover{background:var(--glass)}
+    /* Background glow */
+    .glow{
+      position:fixed;inset:0;z-index:-1;pointer-events:none;
+      background:
+        radial-gradient(600px 400px at 15% -10%,rgba(99,102,241,0.18),transparent 60%),
+        radial-gradient(700px 500px at 110% 15%,rgba(34,211,238,0.10),transparent 55%),
+        radial-gradient(600px 600px at 50% 120%,rgba(167,139,250,0.10),transparent 60%);
+    }
 
-    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:24px;border-radius:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .title{font-size:28px;margin:0 0 6px}
-    .lead{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;gap:12px}
-    .btn{background:var(--accent);padding:10px 14px;border-radius:12px;color:white;font-weight:700;border:none;cursor:pointer}
-    .outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+    /* ---------- Nav ---------- */
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(10,14,26,0.7);
+      border-bottom:1px solid transparent;
+      transition:border-color .3s;
+    }
+    .nav.scrolled{border-bottom-color:var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:700;font-size:18px}
+    .brand-mark{
+      width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+      font-family:var(--font-display);font-weight:700;font-size:15px;color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent-3));
+      box-shadow:0 6px 18px rgba(99,102,241,0.4);
+    }
+    .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+    .nav-links a{padding:8px 14px;border-radius:10px;font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+    .nav-links a:hover{color:var(--text);background:var(--card)}
+    .nav-cta{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff !important;font-weight:600}
+    .nav-cta:hover{opacity:.9;background:linear-gradient(135deg,var(--accent),var(--accent-3)) !important}
+    .burger{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
+    .burger svg{width:26px;height:26px}
 
-    .sidebar .card{background:var(--card);padding:18px;border-radius:14px}
+    /* ---------- Hero ---------- */
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+    .status-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;
+      background:rgba(52,211,153,0.12);color:var(--green);border:1px solid rgba(52,211,153,0.25);
+      margin-bottom:22px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,0.5)}50%{box-shadow:0 0 0 6px rgba(52,211,153,0)}}
+    .hero h1{
+      font-family:var(--font-display);font-size:clamp(38px,6vw,60px);line-height:1.1;font-weight:700;
+      margin-bottom:14px;letter-spacing:-0.02em;
+    }
+    .grad-text{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3) 40%,var(--accent));
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .hero .lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:580px;margin-bottom:28px}
+    .type-row{font-size:clamp(18px,2.4vw,22px);color:var(--muted);font-family:var(--font-display);margin-bottom:20px;min-height:34px}
+    .type-row .cursor{color:var(--accent-2);font-weight:600;animation:blink 1s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;
+      font-weight:600;font-size:15px;cursor:pointer;transition:.2s;border:1px solid transparent;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff;box-shadow:0 8px 24px rgba(99,102,241,0.35)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(99,102,241,0.45)}
+    .btn-ghost{background:transparent;border-color:var(--border);color:var(--text)}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--text)}
+    .hero-socials{display:flex;gap:12px;margin-top:30px}
+    .icon-btn{
+      width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+      background:var(--card);border:1px solid var(--border);transition:.2s;color:var(--muted);
+    }
+    .icon-btn:hover{color:#fff;border-color:var(--accent);transform:translateY(-2px)}
+    .icon-btn svg{width:20px;height:20px}
+
+    .hero-card{
+      position:relative;border-radius:24px;padding:32px;text-align:center;
+      background:var(--bg-soft);border:1px solid var(--border);
+      box-shadow:0 24px 60px rgba(2,6,23,0.6);
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:-1px;border-radius:24px;padding:1px;
+      background:linear-gradient(135deg,var(--accent),transparent 40%,var(--accent-2));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+    }
     .avatar{
-  width:84px;
-  height:84px;
-  border-radius:12px;
-  object-fit:cover;
-  margin-bottom:10px;
-}
-    .socials{display:flex;gap:8px;margin-top:12px}
-    .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.02)}
-
-    section{margin-top:22px}
-    h2{margin:0 0 12px}
-
-    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:12px}
-    .tech{color:var(--muted);font-size:13px;margin-top:8px}
-
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted)}
-
-    footer{margin-top:36px;color:var(--muted);font-size:14px}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .projects-grid{grid-template-columns:1fr}
+      width:150px;height:150px;border-radius:24px;object-fit:cover;margin:6px auto 18px;
+      border:3px solid rgba(255,255,255,0.1);
+      box-shadow:0 14px 40px rgba(0,0,0,0.5);
     }
+    .hero-card h2{font-family:var(--font-display);font-size:24px;margin-bottom:4px}
+    .hero-card .role{color:var(--accent-2);font-weight:600;font-size:15px;margin-bottom:14px}
+    .hero-card .loc{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-size:14px;margin-bottom:6px}
+    .hero-card .loc svg{width:16px;height:16px}
+    .quick-stats{display:flex;justify-content:space-around;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+    .qs b{font-family:var(--font-display);font-size:22px;display:block;color:var(--text)}
+    .qs span{font-size:12.5px;color:var(--muted)}
 
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700}
+    /* ---------- Section headers ---------- */
+    .sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+    .sec-tag{
+      display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--accent-2);background:rgba(34,211,238,0.1);padding:6px 14px;border-radius:999px;margin-bottom:14px;
+    }
+    .sec-head h2{font-family:var(--font-display);font-size:clamp(28px,4vw,38px);letter-spacing:-0.02em;margin-bottom:12px}
+    .sec-head p{color:var(--muted);font-size:16px}
+
+    /* ---------- About ---------- */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .about-text{color:var(--muted);font-size:16.5px;display:flex;flex-direction:column;gap:16px}
+    .about-text strong{color:var(--text)}
+    .about-cards{display:flex;flex-direction:column;gap:14px}
+    .feature{
+      display:flex;gap:16px;padding:18px;border-radius:var(--radius);
+      background:var(--card);border:1px solid var(--border);transition:.2s;
+    }
+    .feature:hover{background:var(--card-hover);transform:translateY(-2px)}
+    .feature .ic{
+      flex:0 0 46px;height:46px;border-radius:12px;display:grid;place-items:center;
+      background:rgba(99,102,241,0.15);color:var(--accent-3);
+    }
+    .feature .ic svg{width:22px;height:22px}
+    .feature h3{font-size:16px;margin-bottom:4px}
+    .feature p{font-size:14px;color:var(--muted)}
+
+    /* ---------- Skills ---------- */
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .skill-cat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.2s}
+    .skill-cat:hover{background:var(--card-hover);transform:translateY(-3px)}
+    .skill-cat h3{font-family:var(--font-display);font-size:17px;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+    .skill-cat .sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      font-size:13px;font-weight:600;color:var(--text);
+      background:rgba(255,255,255,0.05);border:1px solid var(--border);
+      padding:6px 12px;border-radius:999px;transition:.2s;
+    }
+    .tag:hover{border-color:var(--accent);color:#fff}
+    .tag .lv{color:var(--accent-2);font-size:11px}
+
+    /* ---------- Projects ---------- */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{
+      display:flex;flex-direction:column;padding:24px;border-radius:var(--radius);
+      background:var(--card);border:1px solid var(--border);transition:.25s;
+    }
+    .project:hover{background:var(--card-hover);transform:translateY(-4px);border-color:rgba(99,102,241,0.5)}
+    .project .p-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .project .folder{color:var(--accent-2)}
+    .project .folder svg{width:30px;height:30px}
+    .project .links{display:flex;gap:10px}
+    .project .links a{color:var(--muted);display:grid;place-items:center;transition:.2s}
+    .project .links a:hover{color:#fff}
+    .project .links svg{width:20px;height:20px}
+    .project h3{font-family:var(--font-display);font-size:18px;margin-bottom:8px}
+    .project p{font-size:14.5px;color:var(--muted);flex:1}
+    .project .tech{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+
+    /* ---------- Experience / Timeline ---------- */
+    .timeline{position:relative;max-width:760px;margin:0 auto;padding-left:32px}
+    .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+    .tl-item{position:relative;padding-bottom:34px}
+    .tl-item::before{
+      content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;
+      background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 0 4px rgba(99,102,241,0.15);
+    }
+    .tl-item:last-child{padding-bottom:0}
+    .tl-date{display:inline-block;font-size:12.5px;font-weight:700;color:var(--accent-2);background:rgba(34,211,238,0.1);padding:4px 12px;border-radius:999px;margin-bottom:8px}
+    .tl-item h3{font-family:var(--font-display);font-size:18px;margin-bottom:4px}
+    .tl-item .org{font-size:14px;color:var(--muted);margin-bottom:8px}
+    .tl-item ul{padding-left:18px;color:var(--muted);font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+
+    /* ---------- Contact ---------- */
+    .contact-card{
+      max-width:680px;margin:0 auto;text-align:center;padding:44px;border-radius:24px;
+      background:var(--bg-soft);border:1px solid var(--border);position:relative;overflow:hidden;
+    }
+    .contact-card::before{
+      content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);
+      width:340px;height:340px;border-radius:50%;
+      background:radial-gradient(circle,rgba(99,102,241,0.25),transparent 70%);pointer-events:none;
+    }
+    .contact-card h2{font-family:var(--font-display);font-size:clamp(28px,4vw,36px);margin-bottom:14px}
+    .contact-card>p{color:var(--muted);margin-bottom:28px;max-width:460px;margin-left:auto;margin-right:auto}
+    .contact-email{
+      display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:600;font-family:var(--font-display);
+      padding:14px 26px;border-radius:14px;background:var(--card);border:1px solid var(--border);margin-bottom:24px;
+    }
+    .contact-email svg{width:22px;height:22px;color:var(--accent-3)}
+    .contact-email:hover{border-color:var(--accent)}
+    .contact-socials{display:flex;justify-content:center;gap:12px;margin-top:6px}
+    .contact-socials .icon-btn{width:52px;height:52px;border-radius:14px}
+    .contact-socials .icon-btn svg{width:24px;height:24px}
+
+    /* ---------- Footer ---------- */
+    footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+    footer b{color:var(--text)}
+
+    /* ---------- Reveal ---------- */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:920px){
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .hero{min-height:auto;padding-top:140px}
+      .about-grid,.skills-grid,.projects-grid{grid-template-columns:1fr}
+      .nav-links{
+        position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:4px;padding:20px 24px 28px;
+        background:rgba(10,14,26,0.98);border-bottom:1px solid var(--border);
+        transform:translateY(-16px);opacity:0;pointer-events:none;transition:.25s;
+      }
+      .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+      .nav-links a{display:block;padding:12px 14px;font-size:16px}
+      .burger{display:block}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" id="logo">RK</div>
-        <div>
-          <div style="font-weight:800;font-size:16px" id="me">Rohit Kushwaha</div>
-          <div class="muted" id="role">Server Admin</div>
+  <div class="glow"></div>
+
+  <!-- ================= NAV ================= -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand"><span class="brand-mark" id="logoMark">RK</span>Rohit Kushwaha</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="resume.pdf" download class="nav-cta">Resume</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status-pill"><span class="dot"></span>Open to Technical Support &amp; Cloud roles</span>
+        <h1>Hi, I'm <span class="grad-text" id="heroName">Rohit Kushwaha</span></h1>
+        <div class="type-row"><span id="typeText"></span><span class="cursor">|</span></div>
+        <p class="lead" id="heroLead">
+          Technical Support professional specializing in <strong>Disaster Recovery &amp; Cloud</strong>.
+          Experienced managing Windows and Linux servers across both cloud and physical data center
+          environments — keeping critical infrastructure available, recoverable, and running smoothly.
+        </p>
+        <div class="cta-row">
+          <a href="#contact" class="btn btn-primary">Let's talk
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="resume.pdf" download class="btn btn-ghost">Download resume</a>
+        </div>
+        <div class="hero-socials">
+          <a class="icon-btn" id="socialGithub" href="https://github.com/DastanRohit" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a class="icon-btn" id="socialLinkedin" href="https://www.linkedin.com/in/rohit-kush29" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a class="icon-btn" href="mailto:rohitkushwaha99@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          </a>
         </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a id="resumeLink" href="resume.pdf" download target="_blank" class="pill">Resume</a>
-      </nav>
-    </header>
 
-    <div class="hero">
-      <div class="hero-card">
-        <h1 class="title" id="heroTitle">Hi — I'm <span id="nameInline">Rohit Kushwaha</span>.</h1>
-        <p class="lead" id="heroSubtitle">I manage Linux systems and love exploring DevOps tools to build reliable, automated, and scalable IT infrastructure.</p>
-
-        <div class="cta">
-          <button class="btn" id="contactBtn">Contact me</button>
-          <a class="outline" href="#projects" style="padding:10px 14px;border-radius:12px;display:inline-block">See projects</a>
+      <aside class="hero-card">
+        <img src="profile.png" alt="Portrait of Rohit Kushwaha" class="avatar" />
+        <h2 id="sideName">Rohit Kushwaha</h2>
+        <div class="role" id="sideRole">Technical Support · DR &amp; Cloud</div>
+        <div class="loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="sideLocation">Delhi, India</span>
         </div>
-
-        <section id="about">
-          <h2>About</h2>
-          <p id="aboutText">I'm a software engineer with experience building user-facing applications. I enjoy clean design, fast performance, and shipping production-ready code.</p>
-        </section>
-
-        <section id="projects">
-          <h2>Selected projects</h2>
-          <div class="projects-grid" id="projectsGrid"></div>
-        </section>
-      </div>
-
-      <aside class="sidebar">
-        <div class="card">
-          <img src="profile.png" alt="Rohit Kushwaha" class="avatar" />
-          <div style="font-weight:700" id="sideName">Rohit Kushwaha</div>
-          <div class="muted" id="sideRole">Server Admin</div>
-          <div style="margin-top:12px" id="location">Delhi, India</div>
-          <div class="socials" style="margin-top:12px">
-            <a id="githubLink" href="https://github.com/DastanRohit" title="GitHub" aria-label="GitHub">GH</a>
-            <a id="linkedinLink" href="https://www.linkedin.com/in/rohit-kush29" title="LinkedIn" aria-label="LinkedIn">IN</a>
-          </div>
-        </div>
-
-        <div style="height:14px"></div>
-
-        <div class="card">
-          <h3 style="margin-top:0">Skills</h3>
-          <div class="skills" id="skillsList">
-            <span class="skill">Linux</span>
-            <span class="skill">Bash</span>
-            <span class="skill">DevOps</span>
-            <span class="skill">AWS</span>
-            <span class="skill">Prometheus</span>
-            <span class="skill">Grafana</span>
-          </div>
+        <div class="quick-stats">
+          <div class="qs"><b>2+</b><span>Years experience</span></div>
+          <div class="qs"><b>Win + Linux</b><span>Server platforms</span></div>
+          <div class="qs"><b>Cloud + DC</b><span>Environments</span></div>
         </div>
       </aside>
     </div>
+  </header>
 
-    <section id="contact" style="margin-top:18px">
-      <h2>Contact</h2>
-      <p>If you'd like to reach out, click <a href="#" id="mailLink">here to email me</a> or use the button below to copy my email address.</p>
-      <button class="btn" id="copyEmail">Copy email</button>
-    </section>
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-tag">About me</span>
+        <h2>Keeping critical infrastructure available &amp; recoverable</h2>
+        <p>Technical support and infrastructure experience across cloud and physical data center environments.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p id="aboutP1">
+            I'm a <strong>Technical Support (DR &amp; Cloud) professional</strong> based in Delhi, India.
+            My work focuses on keeping servers healthy, available, and recoverable — whether they run
+            on <strong>Windows or Linux</strong>, in the <strong>cloud or in a physical data center</strong>.
+          </p>
+          <p id="aboutP2">
+            Previously I worked in a <strong>data center environment</strong>, where I managed and
+            supported <strong>Windows and Linux servers</strong> on a daily basis. That experience gave me a
+            practical understanding of both <strong>cloud infrastructure and physical data center operations</strong> —
+            from rack-and-stack and hardware troubleshooting to disaster recovery planning and system administration.
+          </p>
+          <p id="aboutP3">
+            Today I bring that same reliability-first mindset to <strong>DR and cloud support</strong> —
+            ensuring systems are monitored, backed up, and ready to recover when it matters most.
+          </p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="feature">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div>
+              <h3>Disaster Recovery</h3>
+              <p>Planning and practices that keep systems available and recoverable — cloud and on-premises.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l6-4v16M14 20V4l6 3v13"/></svg></div>
+            <div>
+              <h3>Windows &amp; Linux</h3>
+              <p>Hands-on administration of both Windows and Linux servers in production environments.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg></div>
+            <div>
+              <h3>Cloud &amp; Data Center</h3>
+              <p>Working across cloud infrastructure and physical data center operations with confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      Created with ♥ — <span id="footerName">Rohit Kushwaha</span>
-    </footer>
-  </div>
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-tag">Skills</span>
+        <h2>Tools I use every day</h2>
+        <p>A practical toolkit built around server administration, DR, and cloud support.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-cat reveal">
+          <h3>🖥️ Server Administration</h3>
+          <p class="sub">Core administration on both major platforms</p>
+          <div class="tags">
+            <span class="tag">Windows Server <span class="lv">· advanced</span></span>
+            <span class="tag">Linux (Ubuntu / Debian) <span class="lv">· advanced</span></span>
+            <span class="tag">Bash &amp; PowerShell</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Cron &amp; Automation</span>
+            <span class="tag">Networking</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>☁️ Cloud &amp; Data Center</h3>
+          <p class="sub">Cloud infrastructure and physical DC operations</p>
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Cloud Infrastructure</span>
+            <span class="tag">Data Center Operations</span>
+            <span class="tag">Hardware Troubleshooting</span>
+            <span class="tag">Virtualization <span class="lv">· learning</span></span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>🔄 DR &amp; Availability</h3>
+          <p class="sub">Keeping systems up and recoverable</p>
+          <div class="tags">
+            <span class="tag">Disaster Recovery</span>
+            <span class="tag">Backup &amp; Restore</span>
+            <span class="tag">High Availability</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Incident Response</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>🛠️ Technical Support</h3>
+          <p class="sub">Solving problems end to end</p>
+          <div class="tags">
+            <span class="tag">Ticketing &amp; SLA</span>
+            <span class="tag">Remote Support</span>
+            <span class="tag">System Tuning</span>
+            <span class="tag">Documentation</span>
+            <span class="tag">Customer Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-tag">Projects</span>
+        <h2>Things I've built</h2>
+        <p>Real-world automation and monitoring projects — documented, tested, and on GitHub.</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= JOURNEY ================= -->
+  <section id="journey">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-tag">Journey</span>
+        <h2>My path so far</h2>
+        <p>Hands-on experience supporting servers and infrastructure across data centers and the cloud.</p>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <h2>Let's keep your systems available &amp; recoverable</h2>
+        <p>I'm actively looking for Technical Support, Cloud, DR, and Server Administration roles. Have an opening, project, or just want to say hi? My inbox is open.</p>
+        <a class="contact-email" href="mailto:rohitkushwaha99@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          rohitkushwaha99@gmail.com
+        </a>
+        <div class="contact-socials">
+          <a class="icon-btn" href="https://github.com/DastanRohit" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/rohit-kush29" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a class="icon-btn" href="resume.pdf" download aria-label="Resume">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> <b>Rohit Kushwaha</b> · Built with a Linux terminal mindset. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     const PROFILE = {
       name: "Rohit Kushwaha",
-      role: "Server Admin",
+      role: "Technical Support DR & Cloud",
       location: "Delhi, India",
       email: "rohitkushwaha99@gmail.com",
       github: "https://github.com/DastanRohit",
       linkedin: "https://www.linkedin.com/in/rohit-kush29",
       resume: "resume.pdf",
-      about: "I manage Linux systems and love exploring DevOps tools to build reliable, automated, and scalable IT infrastructure.",
+      roles: [
+        "Technical Support DR & Cloud",
+        "Windows & Linux Server Administration",
+        "Data Center & Cloud Infrastructure",
+        "Disaster Recovery & Availability"
+      ],
       projects: [
         {
           title: "Log Monitoring & Alert System",
-          description: "Automated SSH login alerts with Bash and cron on Ubuntu 24.04; integrated with Postfix/mailutils for email notifications and validated through simulated SSH attacks.",
-          tech: "Linux • Logs • BashScripting",
+          description: "Automated SSH login alerting system on Ubuntu 24.04. Detects suspicious logins, triggers email alerts via Postfix/mailutils, and was validated end-to-end through simulated SSH attacks.",
+          tech: ["Linux", "Bash", "Cron", "Postfix", "Security"],
           repo: "https://github.com/DastanRohit/log-monitoring-alert-system"
         },
         {
-          title: "Monitoring Stack with AWS",
-          description: "Built a system monitoring stack (Prometheus + Grafana) on AWS to track CPU, memory, and disk usage with automated setup and dashboards.",
-          tech: "AWS • Prometheus • Grafana",
+          title: "Monitoring Stack on AWS",
+          description: "Full system observability stack (Prometheus + Grafana) deployed on AWS to track CPU, memory, and disk usage — with automated setup scripts and ready-to-use dashboards.",
+          tech: ["AWS", "Prometheus", "Grafana", "Node Exporter"],
           repo: "https://github.com/DastanRohit/monitoring-config"
+        }
+      ],
+      timeline: [
+        {
+          period: "Current",
+          title: "Technical Support — DR & Cloud",
+          org: "Disaster Recovery & Cloud Support",
+          points: [
+            "Providing technical support focused on disaster recovery and cloud environments, ensuring business-critical systems remain available and recoverable.",
+            "Supporting Windows and Linux servers, resolving incidents, and coordinating restores and DR processes.",
+            "Working across cloud infrastructure and physical data center environments to keep operations running."
+          ]
+        },
+        {
+          period: "Previous",
+          title: "Server Management — Data Center",
+          org: "Data Center Environment",
+          points: [
+            "Managed and supported Windows and Linux servers in a production data center environment.",
+            "Gained hands-on understanding of cloud and physical data center operations — including hardware, infrastructure, and daily administration.",
+            "Handled monitoring, troubleshooting, and maintenance to maintain uptime and reliability."
+          ]
         }
       ]
     };
 
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.getElementById('me').textContent = PROFILE.name;
-      document.getElementById('sideName').textContent = PROFILE.name;
-      document.getElementById('nameInline').textContent = PROFILE.name;
-      document.getElementById('role').textContent = PROFILE.role;
-      document.getElementById('sideRole').textContent = PROFILE.role;
-      document.getElementById('location').textContent = PROFILE.location;
-      document.getElementById('aboutText').textContent = PROFILE.about;
-      document.getElementById('resumeLink').href = PROFILE.resume;
-      document.getElementById('footerName').textContent = PROFILE.name;
-      document.getElementById('logo').textContent = PROFILE.name.split(' ').map(n=>n[0]).slice(0,2).join('');
+    document.addEventListener('DOMContentLoaded', () => {
+      /* Fill profile data */
+      const $ = id => document.getElementById(id);
+      const initials = PROFILE.name.split(' ').map(n => n[0]).join('');
+      $('logoMark').textContent = initials;
+      $('heroName').textContent = PROFILE.name;
+      $('sideName').textContent = PROFILE.name;
+      $('sideRole').textContent = PROFILE.role;
+      $('sideLocation').textContent = PROFILE.location;
+      $('year').textContent = new Date().getFullYear();
 
-      document.getElementById('githubLink').href = PROFILE.github;
-      document.getElementById('linkedinLink').href = PROFILE.linkedin;
-      document.getElementById('mailLink').href = `mailto:${PROFILE.email}?subject=Opportunity%20from%20your%20portfolio`;
-
-      const grid = document.getElementById('projectsGrid');
-      grid.innerHTML = '';
-      PROFILE.projects.forEach(p=>{
-        const el = document.createElement('article');
-        el.className = 'project';
-        el.innerHTML = `<strong>${p.title}</strong><div class=muted style="margin-top:6px">${p.description}<div class=tech>${p.tech}</div></div>`;
-        if(p.repo || p.link){
-          const foot = document.createElement('div');
-          foot.style.marginTop = '8px';
-          if(p.link) foot.innerHTML += `<a href="${p.link}" target="_blank" rel="noopener">Live</a> `;
-          if(p.repo) foot.innerHTML += ` <a href="${p.repo}" target="_blank" rel="noopener">Code</a>`;
-          el.appendChild(foot);
+      /* Typewriter */
+      let ri = 0, ci = 0, deleting = false;
+      const typeEl = $('typeText');
+      const typeNow = () => {
+        const word = PROFILE.roles[ri];
+        if (deleting) {
+          typeEl.textContent = word.slice(0, --ci);
+          if (ci === 0) { deleting = false; ri = (ri + 1) % PROFILE.roles.length; setTimeout(typeNow, 350); return; }
+          setTimeout(typeNow, 40);
+        } else {
+          typeEl.textContent = word.slice(0, ++ci);
+          if (ci === word.length) { deleting = true; setTimeout(typeNow, 1600); return; }
+          setTimeout(typeNow, 70);
         }
+      };
+      typeNow();
+
+      /* Projects */
+      const grid = $('projectsGrid');
+      PROFILE.projects.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'project reveal';
+        const tech = p.tech.map(t => `<span class="tag">${t}</span>`).join('');
+        const link = p.repo
+          ? `<a href="${p.repo}" target="_blank" rel="noopener" aria-label="View source on GitHub">
+               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+             </a>`
+          : '';
+        el.innerHTML = `
+          <div class="p-top">
+            <div class="folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="links">${link}</div>
+          </div>
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+          <div class="tech">${tech}</div>`;
         grid.appendChild(el);
       });
 
-      document.getElementById('copyEmail').addEventListener('click', async ()=>{
-        try{
-          await navigator.clipboard.writeText(PROFILE.email);
-          alert('Email copied to clipboard: ' + PROFILE.email);
-        }catch(e){
-          prompt('Copy this email:', PROFILE.email);
-        }
+      /* Timeline */
+      const tl = $('timeline');
+      PROFILE.timeline.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'tl-item reveal';
+        div.innerHTML = `
+          <span class="tl-date">${item.period}</span>
+          <h3>${item.title}</h3>
+          <div class="org">${item.org}</div>
+          <ul>${item.points.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+        tl.appendChild(div);
       });
 
-      document.getElementById('contactBtn').addEventListener('click', ()=>{
-        window.location.href = `mailto:${PROFILE.email}?subject=Hello%20from%20your%20portfolio`;
-      });
+      /* Nav scroll state */
+      const nav = $('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* Mobile menu */
+      const burger = $('burger');
+      const navLinks = $('navLinks');
+      const toggle = () => {
+        const open = navLinks.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open);
+      };
+      burger.addEventListener('click', toggle);
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+      /* Reveal on scroll */
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     });
   </script>
 </body>
